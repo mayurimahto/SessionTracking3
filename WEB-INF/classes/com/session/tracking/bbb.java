@@ -12,6 +12,10 @@ public class bbb extends HttpServlet
 		{
 			String name=request.getParameter("name");
 			String city=request.getParameter("city");
+			Cookie c1=new Cookie("name", URLEncoder.encode(name));
+			response.addCookie(c1);
+			Cookie c2=new Cookie("city", URLEncoder.encode(city));
+			response.addCookie(c2);
 			System.out.println("Data Arrived");
 			System.out.println("Name : "+name);
 			System.out.println("City : "+city);
@@ -22,7 +26,7 @@ public class bbb extends HttpServlet
 			pw.println("<html lang='en'>");
 			pw.println("<head>");
 			pw.println("<meta charset='utf-8'>");
-			pw.println("<title>Session Tracking using URL Cookies</title>");
+			pw.println("<title>Session Tracking using Cookies</title>");
 			pw.println("</head>");
 			pw.println("<body>");
 			pw.println("Data Saved<br>");

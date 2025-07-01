@@ -9,8 +9,32 @@ public class ccc extends HttpServlet
 	{
 		try
 		{
-			String name=request.getParameter("name");
-			String city=request.getParameter("city");
+			Cookie cookies[]=request.getCookies();
+			String name="";
+			String city="";
+			if(cookies!=null)
+			{
+				Cookie c;
+				int x;
+				for(x=0;x<cookies.length;x++)
+				{
+					c=cookies[x];
+					if(c.getName().equals("name"))
+					{
+						name=c.getValue();
+						break;
+					}
+				}
+				for(x=0;x<cookies.length;x++)
+				{
+					c=cookies[x];
+					if(c.getName().equals("city"))
+					{
+						city=c.getValue();
+						break;
+					}
+				}
+			}
 			System.out.println("Data Arrived");
 			System.out.println("Name : "+name);
 			System.out.println("City : "+city);
