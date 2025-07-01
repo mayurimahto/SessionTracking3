@@ -22,14 +22,14 @@ public class bbb extends HttpServlet
 			pw.println("<html lang='en'>");
 			pw.println("<head>");
 			pw.println("<meta charset='utf-8'>");
-			pw.println("<title>Session Tracking using URL Rewriting</title>");
+			pw.println("<title>Session Tracking using URL Cookies</title>");
 			pw.println("</head>");
 			pw.println("<body>");
 			pw.println("Data Saved<br>");
 			pw.println("Name : "+name+"<br>");
 			pw.println("City : "+city+"<br>");
 			
-			pw.println("<a href='/SessionTracking2/ccc?name="+URLEncoder.encode(name)+"&city="+URLEncoder.encode(city)+"'>Save</a>");
+			pw.println("<a href='/SessionTracking3/ccc'>Save</a>");
 
 			pw.println("</body>");
 			pw.println("</html>");
