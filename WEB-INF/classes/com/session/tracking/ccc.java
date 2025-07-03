@@ -2,6 +2,7 @@ package com.session.tracking;
 import jakarta.servlet.*;
 import jakarta.servlet.http.*;
 import java.io.*;
+import java.net.*;
 
 public class ccc extends HttpServlet
 {
@@ -25,6 +26,7 @@ public class ccc extends HttpServlet
 						break;
 					}
 				}
+				if(name.length()>0) name=URLDecoder.decode(name);
 				for(x=0;x<cookies.length;x++)
 				{
 					c=cookies[x];
@@ -34,6 +36,7 @@ public class ccc extends HttpServlet
 						break;
 					}
 				}
+				if(city.length()>0)city=URLDecoder.decode(city);
 			}
 			System.out.println("Data Arrived");
 			System.out.println("Name : "+name);
